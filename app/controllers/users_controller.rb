@@ -5,8 +5,17 @@ class UsersController < ApplicationController
   end
 
   def show
-    the_id = params[:the_id]
+    the_id = params[:id]
     user = User.find_by(id: the_id)
     render json: user.as_json
+  end
+
+  def create
+    user = User.new(
+    email: params[:email],
+    password_digest: params[:password],
+    )
+    user.save
+      render json: user.as_json
   end
 end

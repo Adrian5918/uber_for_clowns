@@ -9,4 +9,12 @@ Rails.application.routes.draw do
   get "/users/:id", controller: "users", action: "show"
 
   get "/clowns/:id", controller: "clowns", action: "show"
+
+  get "/bookings", controller: "bookings", action: "index"
+
+  get "/bookings/:id", controller: "bookings", action: "show"
+  #create new user
+  post "/users", controller: "users", action: "create"
+  #create clown
+  post "/clowns", controller: "clowns", action: "create"
 end
